@@ -47,17 +47,28 @@ skin_display.grid(column=1, row=1, sticky=(N, S, W, E))
 show_image()
 
 # 奖池界面
-prize_pool = ttk.Label(mainframe, text="奖池界面", anchor="center")
-prize_pool.grid(column=2, row=1, sticky=(N, S, W, E))
+prize_frame = ttk.Frame(mainframe, borderwidth=5, relief="ridge", width=100, height=200)
+prize_frame.grid(column=2, row=1, sticky=(N, S, W, E))
+style = ttk.Style()
+style.configure("BW.TLabel", foreground="gold")
+prize1 = ttk.Label(prize_frame, text="英雄皮肤1", style="BW.TLabel")
+prize1.grid(column=1, row=1, sticky=(W, E))
+prize2 = ttk.Label(prize_frame, text="英雄皮肤2", style="BW.TLabel")
+prize2.grid(column=1, row=2, sticky=(W, E))
+# prize3 = ttk.Label(prize_frame, text="英雄皮肤3", style="BW.TLabel", anchor="center")
+prize3 = ttk.Label(prize_frame, text="英雄皮肤3", style="BW.TLabel")
+prize3.grid(column=1, row=3, sticky=(W, E))
 
 # 皮肤介绍界面
 skin_introduce = ttk.Label(mainframe, text="皮肤介绍", anchor="center")
 skin_introduce.grid(column=1, row=2, sticky=(N, S, W, E))
 
 # “抽奖”按钮，按下该按钮来执行计算
-b_stytle = ttk.Style()
-b_stytle.configure('TButton', font=font.Font(family='宋体', size=24, weight='bold'), fg="gold")
-lucky = ttk.Button(mainframe, text="开始抽奖", style='TButton', command=sweep_stakes)
+image = PhotoImage(file='./image/立即领取.png')
+# style.configure('TButton', font=font.Font(family='华文楷体', size=24, weight='bold'), foreground="gold", background="white")
+# lucky = ttk.Button(mainframe, text="开始抽奖", style='TButton', command=sweep_stakes)
+lucky = ttk.Button(mainframe, command=sweep_stakes)
+lucky['image'] = image
 lucky.grid(column=2, row=2, sticky=(N, S, W, E))
 
 

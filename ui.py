@@ -47,17 +47,11 @@ skin_display.grid(column=1, row=1, sticky=(N, S, W, E))
 show_image()
 
 # 奖池界面
-prize_frame = ttk.Frame(mainframe, borderwidth=5, relief="ridge", width=100, height=200)
-prize_frame.grid(column=2, row=1, sticky=(N, S, W, E))
 style = ttk.Style()
-style.configure("BW.TLabel", foreground="gold")
-prize1 = ttk.Label(prize_frame, text="英雄皮肤1", style="BW.TLabel")
-prize1.grid(column=1, row=1, sticky=(W, E))
-prize2 = ttk.Label(prize_frame, text="英雄皮肤2", style="BW.TLabel")
-prize2.grid(column=1, row=2, sticky=(W, E))
-# prize3 = ttk.Label(prize_frame, text="英雄皮肤3", style="BW.TLabel", anchor="center")
-prize3 = ttk.Label(prize_frame, text="英雄皮肤3", style="BW.TLabel")
-prize3.grid(column=1, row=3, sticky=(W, E))
+style.configure('BW.TLabel', foreground="deep pink")
+fontStyle = font.Font(family="华文楷体", size=28)
+prize3 = ttk.Label(mainframe, text="英雄皮肤", style="BW.TLabel", font=fontStyle, anchor="center")
+prize3.grid(column=2, row=1, sticky=(W, E))
 
 # 皮肤介绍界面
 skin_introduce = ttk.Label(mainframe, text="皮肤介绍", anchor="center")
